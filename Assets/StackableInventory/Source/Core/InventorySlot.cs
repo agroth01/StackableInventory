@@ -12,6 +12,8 @@ public class InventorySlot<T>
     // Event that will be called every time this slot changes.
     public Action OnSlotChange;
 
+    #region Getters/Setters
+
     /// <summary>
     /// The type of item that is stored in this slot.
     /// </summary>
@@ -60,6 +62,10 @@ public class InventorySlot<T>
         }
     }
 
+    #endregion
+
+    #region Constructors
+
     /// <summary>
     /// Create an empty inventory slot.
     /// </summary>
@@ -75,6 +81,10 @@ public class InventorySlot<T>
     {
         SetItem(item, quantity, maxQuantity);
     }
+
+    #endregion
+
+    #region Slot modification
 
     /// <summary>
     /// Replace the item in the slot with a new item.
@@ -140,6 +150,10 @@ public class InventorySlot<T>
         OnSlotChange?.Invoke();
     }
 
+    #endregion
+
+    #region Quantity checks
+
     /// <summary>
     /// Determines if the slot has room for a specific amount of items.
     /// Does not account for if slot is empty or not.
@@ -165,4 +179,6 @@ public class InventorySlot<T>
         if (Quantity + desired > MaxQuantity) possible = MaxQuantity - Quantity;
         return possible;
     }
+
+    #endregion
 }

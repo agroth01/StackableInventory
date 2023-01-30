@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// This is a generic inventory system that can be used for any type.
+/// This is a generic inventory system that can be used for any type of game where items are stacked, like in Minecraft.
 /// </summary>
 /// <typeparam name="T"></typeparam>
 public class Inventory<T>
